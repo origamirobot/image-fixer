@@ -7,4 +7,32 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="example.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="example.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
+    <PackageReference Include="PDFiumSharpV2" Version="1.1.3" />
+    <PackageReference Include="Upstream.CommandLine" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ImageFixer.Core\ImageFixer.Core.csproj" />
+    <ProjectReference Include="..\ImageFixer.Imaging\ImageFixer.Imaging.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="pdfium_x64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

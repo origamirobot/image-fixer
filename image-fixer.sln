@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33927.249
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageFixer", "ImageFixer\ImageFixer.csproj", "{13F794A7-2118-4789-A7C2-A096A6F4DEA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageFixer.Imaging", "ImageFixer.Imaging\ImageFixer.Imaging.csproj", "{B476CD76-C82A-4C1D-BE5D-014BF56CECF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageFixer.Core", "ImageFixer.Core\ImageFixer.Core.csproj", "{CF14145F-C3BD-40FE-9F56-69B89EA25901}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13F794A7-2118-4789-A7C2-A096A6F4DEA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F794A7-2118-4789-A7C2-A096A6F4DEA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F794A7-2118-4789-A7C2-A096A6F4DEA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F794A7-2118-4789-A7C2-A096A6F4DEA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B476CD76-C82A-4C1D-BE5D-014BF56CECF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B476CD76-C82A-4C1D-BE5D-014BF56CECF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B476CD76-C82A-4C1D-BE5D-014BF56CECF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B476CD76-C82A-4C1D-BE5D-014BF56CECF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF14145F-C3BD-40FE-9F56-69B89EA25901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF14145F-C3BD-40FE-9F56-69B89EA25901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF14145F-C3BD-40FE-9F56-69B89EA25901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF14145F-C3BD-40FE-9F56-69B89EA25901}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
