@@ -1,6 +1,4 @@
-﻿
-
-using ImageFixer.Commands;
+﻿using ImageFixer.Commands;
 using ImageFixer.Core.IO;
 using ImageFixer.Handlers;
 using ImageFixer.Imaging;
@@ -37,7 +35,10 @@ namespace ImageFixer
 		public static CommandLineApplication BuildApplication()
 		{
 			return new CommandLineApplication("image-fixer")
+				.AddCommand<JpgToPdfHandler, JpgToPdfCommand>()
 				.AddCommand<PdfToJpgHandler, PdfToJpgCommand>()
+				.AddCommand<ResizeImageHandler, ResizeImageCommand>()
+				.AddCommand<ConvertImageHandler, ConvertImageCommand>()
 				.ConfigureServices(services =>
 				{
 					services.AddLogging(configure => configure.AddConsole());
@@ -47,12 +48,13 @@ namespace ImageFixer
 					services.AddSingleton<IIoUtility, IoUtility>();
 					services.AddSingleton<IImageUtility, ImageUtility>();
 				})
-				.UseExceptionHandler(ex =>
+				.UseExceptionHandler((ex, ctx) =>
 				{
-					var color = Console.ForegroundColor;
-					Console.ForegroundColor = ConsoleColor.Red;
-					Console.WriteLine(ex.Message);
-					Console.ForegroundColor = color;
+					using var loggerFactory = LoggerFactory.Create(loggingBuilder => loggingBuilder
+						.SetMinimumLevel(LogLevel.Trace)
+						.AddConsole());
+					var logger = loggerFactory.CreateLogger<Exception>();
+					logger.LogError(ex, "Unhandled exception");
 				});
 		}
 
